@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Ron Apelbaum",
+      "authorEmail": "ron.apelbaum@oath.com",
+      "authorUrl": ""
+    }
+  }
+}

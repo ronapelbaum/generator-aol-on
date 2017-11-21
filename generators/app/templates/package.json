@@ -1,0 +1,23 @@
+{
+  "name": "<%= appname %>",
+  "version": "1.0.0",
+  "description": "a yeoman generator for aol-on-* projects",
+  "main": "src/<%= mainFile %>.js",
+  "devDependencies": {
+    "aol-on-infra-utils": "1.17.x"
+  },
+  "scripts": {
+    "prerelease": "patch-version && tag-version --log --deps --push --release --prefix=https://vidible.myjetbrains.com/youtrack/issue/",
+    "release": "npm publish",
+    "clean": "rm -rf test-result/",
+    "remove-eslint-disable": "remove-eslint-disable",
+    "lint": "eslint ./src/** ./test/** --quiet",
+    "prelint:fix": "npm run remove-eslint-disable",
+    "lint:fix": "npm run lint -- --fix",
+    "karma": "./node_modules/.bin/karma start karma.conf.js",
+    "pretest": "npm run clean && npm run lint -- --quiet",
+    "test": "npm run karma",
+    "posttest": "npm run update-coverage",
+    "update-coverage": "update-coverage --flexibility=0.5 --coveragePath=test-results/coverage --no-browser"
+  }
+}
