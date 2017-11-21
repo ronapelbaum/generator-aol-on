@@ -4,7 +4,8 @@
   "description": "a yeoman generator for aol-on-* projects",
   "main": "src/<%= mainFile %>.js",
   "devDependencies": {
-    "aol-on-infra-utils": "1.17.x"
+    "aol-on-infra-utils": "1.17.x",
+    "eslint-config-o2": "4.0.x"
   },
   "scripts": {
     "prerelease": "patch-version && tag-version --log --deps --push --release --prefix=https://vidible.myjetbrains.com/youtrack/issue/",
